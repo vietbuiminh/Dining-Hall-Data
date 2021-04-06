@@ -17,14 +17,15 @@ todayData = datahtml.find('div', attrs = {'id':['today']})
 title = todayData.find('h2').get_text().strip()
 title = title.split(" | ")
 date = title[1].strip()
-data.append(date)
+data.append({'date',date})
 
 #print(date)
 
 # Table section
 table = todayData.find('table', attrs = {'id':['datatable']})
 for line in table.findAll('tr'):
-  data.append(line.get_text().strip())
+  data.append({'meal',line.get_text().strip()})
+
   #print(line.get_text())
 
 df=pd.DataFrame(data)
