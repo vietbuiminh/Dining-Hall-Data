@@ -17,7 +17,7 @@ todayData = datahtml.find('div', attrs = {'id':['today']})
 title = todayData.find('h2').get_text().strip()
 title = title.split(" | ")
 date = title[1].strip()
-data.append({'date':date})
+data.append({'date',date})
 
 #print(date)
 
